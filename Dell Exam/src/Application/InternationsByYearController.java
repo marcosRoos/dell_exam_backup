@@ -6,6 +6,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.chart.BarChart;
+import javafx.scene.chart.CategoryAxis;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -23,13 +27,13 @@ public class InternationsByYearController {
     @FXML
     TextField intByYear_input_municipio;
     @FXML
-    Text result_2018;
+    CategoryAxis x_intByYear = new CategoryAxis();
     @FXML
-    Text result_2019;
+    NumberAxis y_intByYear = new NumberAxis();
     @FXML
-    Text result_2020;
-    @FXML
-    Text result_2021;
+    BarChart<String, Number> chart_intByYear = new BarChart<String, Number>(x_intByYear, y_intByYear);
+
+    XYChart.Series<String,Number> show = new XYChart.Series<String,Number>();
 
     private ArrayList<Integer> getLinesThatHaveCity() {
         ArrayList<Integer> linesThatHaveCity = new ArrayList<>();
@@ -62,11 +66,17 @@ public class InternationsByYearController {
     public void IntByYear_searchByCity() throws Exception {
         ArrayList<Integer> indexes = getLinesThatHaveCity();
        if( indexes != null ) {
+            show.getData().clear();
+            chart_intByYear.getData().clear();
             ArrayList<Integer> InternationByYears = getInternationsByYear( indexes );
-            result_2018.setText( InternationByYears.get(0).toString() );
-            result_2019.setText( InternationByYears.get(1).toString() );
-            result_2020.setText( InternationByYears.get(2).toString() );
-            result_2021.setText( InternationByYears.get(3).toString() );
+
+           show.getData().add(new XYChart.Data( "2018 (" +  InternationByYears.get(0).toString() + ")", InternationByYears.get(0) ));
+           show.getData().add(new XYChart.Data( "2019 (" +  InternationByYears.get(1).toString() + ")", InternationByYears.get(1) ));
+           show.getData().add(new XYChart.Data( "2020 (" +  InternationByYears.get(2).toString() + ")", InternationByYears.get(2) ));
+           show.getData().add(new XYChart.Data( "2021 (" +  InternationByYears.get(3).toString() + ")", InternationByYears.get(3) ));
+
+           chart_intByYear.getData().add( show );
+           chart_intByYear.setLegendVisible(false);
         } else {
             Stage stage = new Stage();
             FXMLLoader fxmloader = new FXMLLoader();

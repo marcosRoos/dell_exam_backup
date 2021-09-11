@@ -6,6 +6,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.chart.BarChart;
+import javafx.scene.chart.CategoryAxis;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -25,13 +29,13 @@ public class AverageController {
     Text totalPacientes;
 
     @FXML
-    Text masculinoMedia;
-
+    CategoryAxis x_average = new CategoryAxis();
     @FXML
-    Text femininoMedia;
-
+    NumberAxis y_average = new NumberAxis();
     @FXML
-    Text geralMedia;
+    BarChart<String, Number> chart_average = new BarChart<String, Number>(x_average, y_average);
+
+    XYChart.Series<String,Number> show = new XYChart.Series<String,Number>();
 
     // Abrir Página incial
     public void open_Home(ActionEvent e) throws Exception {
@@ -88,18 +92,23 @@ public class AverageController {
         return allAges.stream().mapToInt( Integer::intValue ).average().getAsDouble();
     }
 
-
-
     public void searchByCity() throws Exception {
         ArrayList<Integer> indexes = getLinesThatHaveCity();
         if( indexes != null ) {
+            show.getData().clear();
+            chart_average.getData().clear();
+
             double female = AverageFemale( indexes );
             double male = AverageMale( indexes );
             double total = AverageGlobal( indexes );
+
             totalPacientes.setText( Integer.toString( indexes.size()) );
-            femininoMedia.setText( Integer.toString( (int)female ) );
-            masculinoMedia.setText( Integer.toString(  (int)male ) );
-            geralMedia.setText( Integer.toString(  (int)total ) );
+            show.getData().add(new XYChart.Data( "Média Masculino (" +  Integer.toString((int)male) + ")" , (int)male ));
+            show.getData().add(new XYChart.Data( "Média Feminino (" +  Integer.toString((int)female) + ")" , (int)female));
+            show.getData().add(new XYChart.Data( "Média Geral (" +  Integer.toString((int)total) + ")", (int)total ));
+
+            chart_average.getData().add( show );
+            chart_average.setLegendVisible(false);
         } else {
             Stage stage = new Stage();
             FXMLLoader fxmloader = new FXMLLoader();

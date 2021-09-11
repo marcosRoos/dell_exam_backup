@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
@@ -51,45 +54,13 @@
             <Font size="15.0" />
          </font>
       </Button>
-      <Text layoutX="77.0" layoutY="326.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2018">
-         <font>
-            <Font size="29.0" />
-         </font>
-      </Text>
-      <Text fx:id="result_2018" layoutX="192.0" layoutY="326.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Não definido" wrappingWidth="243.0">
-         <font>
-            <Font size="29.0" />
-         </font>
-      </Text>
-      <Text layoutX="77.0" layoutY="381.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2019">
-         <font>
-            <Font size="29.0" />
-         </font>
-      </Text>
-      <Text fx:id="result_2019" layoutX="192.0" layoutY="381.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Não definido" wrappingWidth="243.0">
-         <font>
-            <Font size="29.0" />
-         </font>
-      </Text>
-      <Text layoutX="76.0" layoutY="436.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2020">
-         <font>
-            <Font size="29.0" />
-         </font>
-      </Text>
-      <Text fx:id="result_2020" layoutX="191.0" layoutY="436.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Não definido" wrappingWidth="243.0">
-         <font>
-            <Font size="29.0" />
-         </font>
-      </Text>
-      <Text layoutX="77.0" layoutY="490.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2021">
-         <font>
-            <Font size="29.0" />
-         </font>
-      </Text>
-      <Text fx:id="result_2021" layoutX="192.0" layoutY="490.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Não definido" wrappingWidth="243.0">
-         <font>
-            <Font size="29.0" />
-         </font>
-      </Text>
+      <BarChart fx:id="chart_intByYear" animated="false" layoutX="159.0" layoutY="237.0" prefHeight="413.0" prefWidth="895.0">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" fx:id="x_intByYear" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis fx:id="y_intByYear" label="Internações" side="LEFT" />
+        </yAxis>
+      </BarChart>
    </children>
 </AnchorPane>
