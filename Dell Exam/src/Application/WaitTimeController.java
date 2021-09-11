@@ -51,15 +51,11 @@ public class WaitTimeController implements Initializable {
                 }
             }
         }
-
-        System.out.println( temposHora );
-
         return temposHora;
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
         ArrayList<Integer> cases = getFiveGreatestTimes();
 
         show.getData().add(new XYChart.Data( Integer.toString(cases.get(0)), cases.get(0)));

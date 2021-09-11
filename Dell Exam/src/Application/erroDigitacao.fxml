@@ -19,7 +19,7 @@
             <Font name="Arial Black" size="17.0" />
          </font>
       </Text>
-      <Text layoutX="169.0" layoutY="105.0" lineSpacing="2.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" text="Mas não desanime, para encontrar oque deseja você deve escrever o nome da referência exatamente como está na tabela csv, não se preocupe em colocar em caixa alta, pois o software faz isso por você, mas não use acentuação." wrappingWidth="271.7294921875">
+      <Text layoutX="169.0" layoutY="93.0" lineSpacing="2.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" text="Mas não desanime, para encontrar o que deseja você deve escrever o nome da referência exatamente como está na tabela csv, não se preocupe em colocar em caixa alta, pois o software faz isso por você, mas não use acentuação." wrappingWidth="271.7294921875">
          <font>
             <Font size="15.0" />
          </font>

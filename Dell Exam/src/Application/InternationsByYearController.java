@@ -64,10 +64,10 @@ public class InternationsByYearController {
     }
 
     public void IntByYear_searchByCity() throws Exception {
+        show.getData().clear();
+        chart_intByYear.getData().clear();
         ArrayList<Integer> indexes = getLinesThatHaveCity();
        if( indexes != null ) {
-            show.getData().clear();
-            chart_intByYear.getData().clear();
             ArrayList<Integer> InternationByYears = getInternationsByYear( indexes );
 
            show.getData().add(new XYChart.Data( "2018 (" +  InternationByYears.get(0).toString() + ")", InternationByYears.get(0) ));

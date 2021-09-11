@@ -92,6 +92,7 @@ public class InternationTimeController implements Initializable {
     }
 
     public void searchBySolicitante() throws Exception {
+        solicitante_table.setItems(null);
         ArrayList<Integer> indexes = getLinesContainsHospital();
         if( indexes != null ) {
             addInfos(indexes);

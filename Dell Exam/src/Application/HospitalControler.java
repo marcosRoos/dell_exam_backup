@@ -90,6 +90,7 @@ public class HospitalControler implements Initializable {
     }
 
     public void searchByHospital() throws Exception {
+        hospital_table.setItems(null);
         ArrayList<Integer> indexes = getLinesContainsHospital();
         if( indexes != null ) {
             addInfos( indexes );

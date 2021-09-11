@@ -93,11 +93,11 @@ public class AverageController {
     }
 
     public void searchByCity() throws Exception {
+        totalPacientes.setText( "Não Definido" );
+        show.getData().clear();
+        chart_average.getData().clear();
         ArrayList<Integer> indexes = getLinesThatHaveCity();
         if( indexes != null ) {
-            show.getData().clear();
-            chart_average.getData().clear();
-
             double female = AverageFemale( indexes );
             double male = AverageMale( indexes );
             double total = AverageGlobal( indexes );
