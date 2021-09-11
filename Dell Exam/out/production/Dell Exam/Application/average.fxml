@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Application.AverageController">
+   <cursor>
+      <Cursor fx:constant="DEFAULT" />
+   </cursor>
+   <children>
+      <Button layoutX="494.0" layoutY="746.0" mnemonicParsing="false" onAction="#open_Home" prefHeight="30.0" prefWidth="433.0" text="Voltar" textAlignment="CENTER">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Text layoutX="14.0" layoutY="774.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Exercício Técnico [ Marco Antônio Marcos Roos ]" />
+      <ImageView fitHeight="24.0" fitWidth="53.0" layoutX="14.0" layoutY="737.0">
+         <image>
+            <Image url="@../img/dell.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="217.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Consultar média de idade dos pacientes" textAlignment="CENTER">
+         <font>
+            <Font size="38.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="106.0" fitWidth="106.0" layoutX="1080.0" layoutY="680.0">
+         <image>
+            <Image url="@../img/icon.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="67.0" layoutY="152.0" text="Municipio">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="input_municipio" layoutX="223.0" layoutY="149.0" prefHeight="24.0" prefWidth="399.0" promptText="Digite o municipio para consultar">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </TextField>
+      <Button layoutX="664.0" layoutY="152.0" mnemonicParsing="false" onAction="#searchByCity" prefHeight="30.0" prefWidth="213.0" text="Buscar" textAlignment="CENTER">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Text layoutX="66.0" layoutY="322.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total de pacientes do município">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Text>
+      <Text layoutX="66.0" layoutY="376.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Média de idade dos pacientes do sexo masculino">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Text>
+      <Text layoutX="66.0" layoutY="498.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Média de idade de todos os pacientes">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Text>
+      <Text layoutX="66.0" layoutY="437.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Média de idade dos pacientes do sexo feminino">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Text>
+      <Text fx:id="totalPacientes" layoutX="890.0" layoutY="322.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Não definido" textAlignment="RIGHT" wrappingWidth="243.0">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Text>
+      <Text fx:id="masculinoMedia" layoutX="890.0" layoutY="376.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Não definido" textAlignment="RIGHT" wrappingWidth="243.0">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Text>
+      <Text fx:id="femininoMedia" layoutX="890.0" layoutY="437.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Não definido" textAlignment="RIGHT" wrappingWidth="243.0">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Text>
+      <Text fx:id="geralMedia" layoutX="890.0" layoutY="498.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Não definido" textAlignment="RIGHT" wrappingWidth="243.0">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
