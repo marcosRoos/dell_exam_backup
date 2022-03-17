@@ -1,3 +1,5 @@
+<img src="http://unmaintained.tech/badge.svg"/>
+
 # Dell Exam ( September/2021 ) => Open in January/2022
 
 ## Advice 
